@@ -8,7 +8,7 @@ bool is_prime(int num)
   {
     return true;
   }
-  for (int i = 2; i <= num / 2; i++)
+  for (int i = 3; i <= num / 3; i++)
   {
     if (num % i == 0)
     {
@@ -24,7 +24,7 @@ int main()
   struct timespec start, finish;
   clock_gettime(CLOCK_REALTIME, &start);
 
-  for (int i = 2; i <= 250000; i++)
+  for (int i = 1; i <= 250000; i += 2)
   {
     if (is_prime(i))
     {

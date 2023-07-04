@@ -1,6 +1,6 @@
 def prime?(num)
   return true if num < 4
-  (2..num / 2).each do |div|
+  (3..num / 3).each do |div|
     return false if num % div == 0
   end
   true
@@ -8,7 +8,7 @@ end
 
 count = 0
 start = Time.now
-(2..250000).each do |num|
+(1..250000).step(2) do |num|
   count += 1 if prime?(num)
 end
 finish = Time.now

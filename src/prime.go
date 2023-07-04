@@ -13,7 +13,7 @@ func isPrime(num int) bool {
 		return true
 
 	}
-	for i := 2; i <= num/2; i++ {
+	for i := 3; i <= num/3; i++ {
 		if num%i == 0 {
 			return false
 		}
@@ -37,7 +37,7 @@ func main() {
 	count := 0
 	start := time.Now().UTC()
 
-	for i := 2; i <= 250000; i++ {
+	for i := 1; i <= 250000; i += 2 {
 		if isPrime(i) {
 			count++
 		}

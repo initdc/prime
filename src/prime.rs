@@ -4,7 +4,7 @@ fn is_prime(num: u32) -> bool {
     if num < 4 {
         return true;
     }
-    for div in 2..num / 2 {
+    for div in 3..num / 3 {
         if num % div == 0 {
             return false;
         }
@@ -15,7 +15,7 @@ fn is_prime(num: u32) -> bool {
 fn main() {
     let mut count = 0;
     let start = Instant::now();
-    for num in 2..250000 {
+    for num in (1..250000).step_by(2) {
         if is_prime(num) {
             count += 1
         }
