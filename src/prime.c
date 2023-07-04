@@ -34,6 +34,6 @@ int main()
 
   clock_gettime(CLOCK_REALTIME, &finish);
   float duration = (finish.tv_sec - start.tv_sec) + (finish.tv_nsec - start.tv_nsec) * 1e-9;
-  printf("count:    %d\n", count);
+  printf("count   : %d\n", count);
   printf("duration: %.9fs\n", duration);
 }

@@ -1,7 +1,10 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"os"
+	"runtime/pprof"
 	"time"
 )
 
@@ -19,6 +22,18 @@ func isPrime(num int) bool {
 }
 
 func main() {
+	cpuProfile := flag.String("cpuprofile", "", "write cpu profile to file")
+	flag.Parse()
+
+	if *cpuProfile != "" {
+		f, err := os.Create(*cpuProfile)
+		if err != nil {
+			panic(err)
+		}
+		pprof.StartCPUProfile(f)
+		defer pprof.StopCPUProfile()
+	}
+
 	count := 0
 	start := time.Now().UTC()
 

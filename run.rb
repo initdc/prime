@@ -18,6 +18,7 @@ end
 
 demo = {
   "prime.c": ['gcc -o bin/prime_c -O3', 'bin/prime_c'],
+  "prime.rs": ['rustc -o bin/prime_rs -O', 'bin/prime_rs'],
   "prime.cr": ['crystal build -o bin/prime_cr --release', 'bin/prime_cr'],
   "prime.go": ['go build -o bin/prime_go', 'bin/prime_go'],
   "prime.nim": ['nim c -o:bin/prime_nim -d:release', 'bin/prime_nim'],
